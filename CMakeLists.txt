@@ -123,7 +123,8 @@ set(ZLIB_SRCS
     zutil.c
 )
 
-if(NOT MINGW)
+if(MINGW OR MSYS)
+else()
     set(ZLIB_DLL_SRCS
         win32/zlib1.rc # If present will override custom build rule below.
     )
